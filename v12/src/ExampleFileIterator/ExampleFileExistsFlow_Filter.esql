@@ -1,0 +1,14 @@
+
+
+CREATE FILTER MODULE ExampleFileExistsFlow_Filter
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE MyDateVariable1 DATE CAST(LocalEnvironment.Destination.File.LastModified AS DATE);
+		DECLARE MyDateVariable2 DATE CAST(CURRENT_GMTTIMESTAMP AS DATE);
+		IF (MyDateVariable1 < MyDateVariable2) THEN
+			RETURN FALSE;
+		ELSE
+			RETURN TRUE;
+		END IF;
+	END;
+END MODULE;
