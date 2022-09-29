@@ -1,6 +1,6 @@
 
 
-CREATE FILTER MODULE ExampleFileExistsFlow_Filter
+CREATE FILTER MODULE ExampleFileIteratorFlow_Filter
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
 		DECLARE MyDateVariable1 DATE CAST(LocalEnvironment.Destination.File.LastModified AS DATE);
