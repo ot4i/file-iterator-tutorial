@@ -10,7 +10,7 @@ CREATE FILTER MODULE ExampleFileIteratorFlow_Filter
 			RETURN TRUE;
 		ELSE
 			-- This means the file was last modified on today's date
-			RETURN TRUE;
+			RETURN FALSE;
 		END IF;
 	END;
 END MODULE;
